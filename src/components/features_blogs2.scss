@@ -1,0 +1,47 @@
+.feature-blogs-wrapper {
+    background-color: rgb(251, 209, 209);
+
+    .container {
+        .row {
+            .card.shadow {
+                margin-top: 4rem;
+
+                a {
+                    .left-img-wrapper {
+                        height: 23rem;
+
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+
+                        }
+                    }
+                }
+            }
+
+            .right-img-wrapper {
+                height: 8rem;
+                overflow: hidden;
+                padding-top: 20px;
+            }
+
+            .text-wrapper {
+                p.date {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+                p.header {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-top: -14px;
+                }
+
+                p.excerpt {
+                    font-weight: 400;
+                    margin-top: -14px;
+                }
+            }
+        }
+    }
+}
