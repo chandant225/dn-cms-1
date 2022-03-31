@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 import Loader from '../components/loader';
 const EventPage = ({ eventData, fetchEvents }) => {
     const [loading, setloading] = useState(true);
+    const [visibleNumber, setVisibleNumber] = useState(2);
+    const [moreLoading, setmoreLoading] = useState(false);
+
+    const LoadMore = () => {
+        setmoreLoading(true)
+        setVisibleNumber((prevValue) => prevValue + 2);
+        setmoreLoading(false);
+
+    }
+
     useEffect(() => {
         fetchEvents();
 
@@ -13,7 +23,7 @@ const EventPage = ({ eventData, fetchEvents }) => {
             setloading(false);
         }, 3000)
     }, []);
-    const allEvents = eventData.Events
+    const allEvents = eventData.Events.slice(0, visibleNumber);
     var oddRight = [];
     var evenLeft = [];
     for (let i = 0; i < allEvents.length; i++) {
@@ -75,6 +85,12 @@ const EventPage = ({ eventData, fetchEvents }) => {
                             </div>
                         </div>
                     </div>
+                    <center>
+                        {moreLoading ? <p>loading</p> : (
+                            <button className="btn btn-danger" onClick={LoadMore}>LoadMore</button>
+                        )}
+
+                    </center>
                 </div>
             )}
 

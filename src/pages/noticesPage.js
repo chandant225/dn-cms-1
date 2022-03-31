@@ -51,7 +51,11 @@ const NoticePage = ({ noticeData, fetchNotices }) => {
                         </table>
                     </div>
                 )}
+                <center>
+                    <button className="btn btn-danger">view more</button>
+                </center>
             </div>
+
         </div>
     );
 }
